@@ -20,8 +20,8 @@ from trades.views import index, categories
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+
     path('', include('trades.urls')),
-    path('', include('trades.urls')),
+
 
 ]

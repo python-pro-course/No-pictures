@@ -10,7 +10,7 @@ def index(request):
 
 def categories(request):
     categories = Category.objects.all()
-    return render(request, 'trades/products.html', {'categories' : categories})
+    return render(request, 'trades/products.html', {'categories': categories})
 
 def by_category(request, category_id, page):
     category = Category.objects.get(id=category_id)
@@ -20,7 +20,7 @@ def by_category(request, category_id, page):
     paginator = Paginator(products, per_page)
     products_paginator = paginator.page(page)
 
-    context = {'products' : products_paginator, 'category': category}
+    context = {'products': products, 'paginator' : products_paginator, 'category': category}
     return render(request, 'trades/products_to_buy.html', context)
 
 

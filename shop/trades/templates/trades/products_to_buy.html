@@ -17,7 +17,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item">
-      <a class="page-link" href="{% if products.has_previous %} {% url 'paginator' category.id products.previous_page_number %} {% else %} # {% endif %} " aria-label="Previous"></a>
+      <a class="page-link" href="{% if paginator.has_previous %} {% url 'paginator' category.id products.previous_page_number %} {% else %} # {% endif %} " aria-label="Previous"></a>
     </li>
       {% for page in products.paginator.page_range %}
     <li class="page-item"><a class="page-link" href="#">1</a></li>
