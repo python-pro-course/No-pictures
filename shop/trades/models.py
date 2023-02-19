@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import Usery
 
 # Create your models here.
 class Category(models.Model):
@@ -19,6 +20,19 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.description}'
+
+
+
+class Basket(models.Model):
+    user = models.ForeignKey(to=Usery, on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
+    quantity = models.SmallIntegerField(default=0)
+
+
+    def __str__(self):
+        return f'корзина пользователя {self.user.name}, товар: {self.product.name}'
+
+
 
 
 
