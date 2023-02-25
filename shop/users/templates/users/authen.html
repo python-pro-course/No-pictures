@@ -25,8 +25,11 @@
                 </div>
             </form>
             <div class="card_footer">
-                <p>Нет аккаунта? <a href="">Регистрация</a></p>
+                <p>Нет аккаунта? <a href="{% url 'register' %}">Регистрация</a></p>
             </div>
+            {% if form.non_field_errors %}
+            <p>{{ form.non_field_errors }}</p>
+            {% endif %}
         </div>
     </div>
 </div>

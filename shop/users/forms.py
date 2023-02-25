@@ -32,10 +32,7 @@ class UserRegistrationForm(UserCreationForm):
         'class': 'form-control',
         'placeholder': 'Имя пользователя'
     }))
-    email = forms.CharField(widget=forms.EmailInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Имя пользователя'
-    }))
+
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
         'placeholder': 'Имя пользователя'
@@ -47,7 +44,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = Usery
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'password1', 'password2')
 
 
 class UserProfileForm(UserChangeForm):
@@ -63,10 +60,7 @@ class UserProfileForm(UserChangeForm):
         'class': 'form-control',
         'placeholder': 'Имя пользователя'
     }))
-    email = forms.CharField(widget=forms.EmailInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Имя пользователя'
-    }))
+
     class Meta:
         model = Usery
-        fields = ('first_name', 'last_name', 'username', 'email')
+        fields = ('first_name', 'last_name', 'username')

@@ -33,10 +33,10 @@ def auth_user(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(data=request.Post)
+        form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('auth'))
+            return HttpResponseRedirect(reverse('authen'))
     else:
         form = UserRegistrationForm()
 
@@ -59,6 +59,7 @@ def profille(request):
 
 def logout(request):
     pass
+
 
 
 

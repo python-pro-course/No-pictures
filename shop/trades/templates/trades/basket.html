@@ -6,7 +6,9 @@
 {% block content %}
 
 <div class="container">
+    {% if basket %}
    <h2>Корзина</h2>
+    {% for basket in baskets %}
    <p class="products_amount">2 товара</p>
    <div class="card mb-3" style="width: 800px;">
        <div class="row g-0">
@@ -18,16 +20,23 @@
                        content. This content is a little bit longer.</p>
                    <p class="card-text">
                    <nav aria-label="Page navigation example">
+
+
                        <ul class="pagination">
-                           <li class="page-item"><a class="page-link" href="#">-</a></li>
+                           <li class="page-item"><a class="page-link" href="{% url 'basket_min' basket.product.id %}">-</a></li>
                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                           <li class="page-item"><a class="page-link" href="#">+</a></li>
+                           <li class="page-item"><a class="page-link" href="{% url 'basket' basket.product.id %}">+</a></li>
                        </ul>
+
+
                    </nav>
                    <small class="text-muted">Last updated 3 mins ago</small>
                </div>
            </div>
        </div>
    </div>
+    {% endfor %}
+    {% endif %}
+
 </div>
 {% endblock %}
