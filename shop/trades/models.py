@@ -17,6 +17,7 @@ class Product(models.Model):
     amount = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='images', null=True, blank=True)
     category = models.ForeignKey(to=Category, on_delete=models.PROTECT)
+    favourite = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name} {self.description}'
@@ -24,13 +25,14 @@ class Product(models.Model):
 
 
 class Basket(models.Model):
+
     user = models.ForeignKey(to=Usery, on_delete=models.CASCADE)
-    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
+    productik = models.ForeignKey(to=Product, on_delete=models.CASCADE)
     quantity = models.SmallIntegerField(default=0)
 
 
     def __str__(self):
-        return f'корзина пользователя {self.user.name}, товар: {self.product.name}'
+        return f'корзина пользователя {self.user.name}, товар: {self.productik.name}'
 
 
 

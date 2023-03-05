@@ -28,8 +28,10 @@
                            <li class="page-item"><a class="page-link" href="{% url 'basket' basket.product.id %}">+</a></li>
                        </ul>
 
-
                    </nav>
+
+                   <a class="page-link" href="{% url 'delete_basket' basket.id %}">-</a>
+
                    <small class="text-muted">Last updated 3 mins ago</small>
                </div>
            </div>

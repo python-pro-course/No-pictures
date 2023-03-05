@@ -1,15 +1,19 @@
 {% extends 'layout/base.html' %}
+
 {% load static %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/indexx.css' %}">
 {% endblock %}
+
+
+
 {% block content %}
 
 <div class="box">
     <div>
-        <h1>Мяумаркет</h1>
-        <p> (^0_0^) <---> (^o.o^) </p>
-        <button type="button" class="btn btn-outline-dark">Начать</button>
+        <h1>Моя еда</h1>
+        <p> Свежие продукты! </p>
+        <a class="nav-link" href="{% url 'authen' %}">Войти</a>
     </div>
 </div>
 

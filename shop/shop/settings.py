@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'trades.apps.TradesConfig',
     'users.apps.UsersConfig',
 
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'shop.urls'
@@ -82,8 +84,12 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'My own shop database',
+        'USER': 'postgres',
+        'PASSWORD': '12341',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -141,3 +147,15 @@ AUTH_USER_MODEL = 'users.Usery'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = '/'
+
+
+
+
+
+
+
+
+
+

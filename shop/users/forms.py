@@ -22,24 +22,24 @@ class UserAuthForm(AuthenticationForm):
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Имя'
     }))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Фамилия'
     }))
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Никнейм'
     }))
 
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Пароль'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Повторите пароль'
     }))
 
     class Meta:
@@ -54,11 +54,11 @@ class UserProfileForm(UserChangeForm):
     }))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Фамилия'
     }))
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Имя пользователя'
+        'placeholder': 'Никнейм'
     }))
 
     class Meta:

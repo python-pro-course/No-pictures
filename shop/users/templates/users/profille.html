@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/profille.css' %}">{% endblock %}
 {% block content %}
 <div class="container">
-   <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+   <form action="{% url 'profile' user.id %}" method="post" enctype="multipart/form-data">
        {% csrf_token %}
        <div class="row">
            <div class="col-md-6">
@@ -31,10 +31,6 @@
                    <label for="form.last_name.id_for_label" class="form-label">Фамилия</label>
                     {{ form.last_name }}
 
-               <div>
-                   <label for="form.email.id_for_label" class="form-label">Адрес электронной почты</label>
-                    {{ form.email }}
-               </div>
 
                <div class="flex-container">
                    <button type="submit" class="btn btn-dark">Сохранить</button>
@@ -43,4 +39,6 @@
        </div>
    </form>
 </div>
+<br>
+<br>
 {% endblock %}
